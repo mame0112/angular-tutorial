@@ -1,0 +1,26 @@
+<html ng-app="phonecatApp">
+<head>
+  <script src="js/angular.min.js"></script>
+  <script src="js/controllers.js"></script>
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body ng-controller="PhoneListCtrl">
+<div class="container-fluid">
+	<div class="row">
+		 <div class="col-md-2">
+		 	Search: <input ng-model="query">
+		 </div>
+		 <div class="col-md-10">
+		 	<ul class="phones">
+			    <li ng-repeat="phone in phones | filter:query">
+			      <span>{{phone.name}}</span>
+			      <p>{{phone.snippet}}</p>
+			    </li>
+		 	</ul>
+		 </div>
+	</div>
+</div>
+
+
+</body>
+</html>
